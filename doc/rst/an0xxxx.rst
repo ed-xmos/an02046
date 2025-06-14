@@ -1,0 +1,97 @@
+##############################
+AN0xxxx: app_note_title
+##############################
+
+************
+Introduction
+************
+
+Introduction text
+
+***********
+Section one
+***********
+
+Section one text
+
+Sub-section
+===========
+
+Sub-section text
+
+Another sub-section
+===================
+
+Another sub-section text
+
+***********
+Section two
+***********
+
+Section two text
+
+Section two subsection
+======================
+
+Sub section text
+
+Section two subsubsection
+-------------------------
+
+Sub sub section text
+
+Another subsubsection
+---------------------
+
+Sub sub section text
+
+*******************
+Example application
+*******************
+
+====================
+Building the example
+====================
+
+This section assumes you have downloaded and installed the `XMOS XTC tools <https://www.xmos.com/software-tools/>`_
+(see `README` for required version).
+Installation instructions can be found `here <https://xmos.com/xtc-install-guide>`_.
+
+Be sure to pay attention to the section `Installation of required third-party tools
+<https://www.xmos.com/documentation/XM-014363-PC-10/html/installation/install-configure/install-tools/install_prerequisites.html>`_.
+
+The application uses the `xcommon-cmake <https://www.xmos.com/file/xcommon-cmake-documentation/?version=latest>`_
+build system as bundled with the XTC tools.
+
+The ``an0xxxx`` software zip-file should be downloaded and unzipped to a chosen directory.
+
+To configure the build run the following from an XTC command prompt::
+
+    cd an0xxxx
+    cd app_an0xxxx
+    cmake -G "Unix Makefiles" -B build
+
+All required dependencies are included in the software download, however, if any are missing it is
+at this configure step that they will be downloaded by the build system.
+
+Finally, the application binaries can be built using ``xmake``::
+
+    xmake -j -C build
+
+This command will cause a binaries (.xe files) to be generated in relevant subdirectories of the
+`app_an0xxxx/bin` directory, one for each of the build configurations.
+
+===================
+Running the example
+===================
+
+From a XTC command prompt run the following command from the `an0xxxx/app_an0xxxx` directory::
+
+    xrun ./bin/app_an0xxxx.xe
+
+Alternatively the binary can be programmed into the non-volatile flash memory with the command::
+
+    xflash ./bin/app_an0xxxx.xe
+
+
+
