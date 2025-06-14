@@ -16,11 +16,11 @@ echo "Title: $title";
 
 echo "Renaming app note..."
 
-original_author="author_name"
-original_name="an0xxxx"
-original_name_upper="AN0xxxx"
-original_urlname="project_urlname"
-original_title="app_note_title"
+original_author="ed-xmos"
+original_name="an02046"
+original_name_upper="AN02046"
+original_urlname="an02046"
+original_title="Adding CDC Virtual Comm Port to USB Audio"
 
 # for filename in $(find . -name "*.*")
 for filename in $(git ls-files)
@@ -32,16 +32,3 @@ do
     sed -i '' "s/$original_title/$title/g" $filename
 
     # Clean up readme (probably should only run on that file...)
-    sed -i '' '/HOW TO USE THIS TEMPLATE/,/THIS MESSAGE WILL SELF DESTRUCT/d' $filename
-    echo "Renamed $filename"
-done
-
-mv app_an0xxxx "app_$name"
-mv doc/rst/an0xxxx.rst "doc/rst/$name.rst"
-
-# This command runs only once on GHA!
-rm -rf .github/template.yml
-
-# Remove all the rename files
-rm -rf .github/rename_project.sh
-rm -rf .github/workflows/rename_project*.yml
